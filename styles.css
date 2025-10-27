@@ -1,0 +1,348 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    margin-bottom: 60px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: #667eea;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s;
+}
+
+.nav a:hover {
+    opacity: 0.8;
+}
+
+/* Hero Section */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.hero-content {
+    color: white;
+}
+
+.greeting {
+    display: block;
+    font-size: 24px;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.name {
+    display: block;
+    font-size: 56px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #fff, #f0f0f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle {
+    font-size: 24px;
+    margin-bottom: 20px;
+    opacity: 0.95;
+}
+
+.hero-description {
+    font-size: 18px;
+    margin-bottom: 30px;
+    opacity: 0.85;
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    padding: 14px 32px;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background: white;
+    color: #667eea;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: #667eea;
+}
+
+/* Profile Card */
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-card {
+    width: 380px;
+    height: 380px;
+    background: linear-gradient(145deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+    border-radius: 50%;
+    backdrop-filter: blur(10px);
+    border: 3px solid rgba(255,255,255,0.3);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.card-glow {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255,255,255,0.2), transparent);
+    border-radius: 50%;
+    top: -50px;
+    right: -50px;
+    pointer-events: none;
+}
+
+/* Make the profile image fill the circular card */
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 50%;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(50px, 50px);
+    }
+    50% {
+        transform: translate(150px, 250px);
+    }
+}
+
+/* Services Section */
+.services {
+    /* Subtle professional gradient (soft blue-gray) instead of plain white */
+    background: linear-gradient(180deg, #f6f8ff 0%, #eef4ff 100%);
+    border-radius: 30px;
+    padding: 60px 40px;
+    margin-bottom: 60px;
+    box-shadow: 0 20px 60px rgba(17, 24, 39, 0.06);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 50px;
+    /* darker blue-gray for better contrast on the new background */
+    color: #0f172a;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    text-align: center;
+    padding: 30px;
+    border-radius: 14px;
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+    /* Subtle semi-opaque card to create a box-like separation without high contrast */
+    background: rgba(255, 255, 255, 0.65);
+    border: 1px solid rgba(15, 23, 42, 0.04);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.03);
+    backdrop-filter: blur(4px);
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 34px rgba(15, 23, 42, 0.06);
+}
+
+.service-icon {
+    font-size: 64px; /* increased icon size */
+    margin-bottom: 20px;
+    color: #667eea; /* brand-accent color */
+    transition: transform 0.18s ease, opacity 0.18s ease;
+}
+
+.service-card:hover .service-icon {
+    transform: translateY(-4px) scale(1.04);
+    opacity: 0.95;
+}
+
+.service-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #667eea;
+}
+
+.service-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Contact Section */
+.contact {
+    /* Soft, neutral gradient so the contact section doesn't read as raw white */
+    background: linear-gradient(180deg, #fbfdff 0%, #f3f6fb 100%);
+    border-radius: 30px;
+    padding: 60px 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 12px 40px rgba(15, 23, 42, 0.04);
+    text-align: center;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.contact-item:hover {
+    color: #667eea;
+}
+
+.contact-icon {
+    font-size: 24px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    transition: opacity 0.3s;
+}
+
+.social-link:hover {
+    opacity: 0.7;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 30px 0;
+    color: white;
+    opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .name {
+        font-size: 40px;
+    }
+
+    .hero-subtitle {
+        font-size: 20px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .profile-card {
+        width: 280px;
+        height: 280px;
+    }
+
+    .nav {
+        gap: 15px;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
